@@ -31,6 +31,9 @@ public class Calculator{
                 case 'P':
                     power();
                     break;
+                case 'R':
+                    root();
+                    break;
                 case 'X':
                     break;
             }
@@ -151,6 +154,30 @@ public class Calculator{
             }
 
             result = Math.pow(num1,num2);
+            System.out.println("\n"+result);
+        }
+    }
+
+    private void root(){
+        double num1, num2;
+        double result;
+        boolean flag = false;
+
+        while(flag!=true){
+            try{
+                System.out.print("\nEnter the first number (?√?)\n>>");
+                num1 = Integer.parseInt(sc.next());
+                System.out.print("\nEnter the second number ("+num1+"√?)\n>>");
+                num2 = Integer.parseInt(sc.next());
+
+                flag = true;
+            }
+            catch (NumberFormatException e){
+                System.out.println("Please enter a number\n");
+                break;
+            }
+
+            result = Math.pow(num2,1/num1);
             System.out.println("\n"+result);
         }
     }
